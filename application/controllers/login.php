@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Fajar Lukman
- * Date: 7/6/2018
- * Time: 9:06 AM
- */
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 class login extends CI_Controller
 {
-    public function _construct()
+    public function __construct()
     {
-        parent::_construct();
-        //load model admin
+        parent::__construct();
         $this->load->model('Admin');
     }
 
@@ -21,7 +14,7 @@ class login extends CI_Controller
         if($this->Admin->logged_id())
         {
             //jika memang session sudah terdaftar, maka redirect ke halaman dahsboard
-            redirect("dashboard");
+            redirect(base_url("mahasiswa"));
 
         }else{
 
@@ -40,13 +33,13 @@ class login extends CI_Controller
 
                 //get data dari FORM
                 $username = $this->input->post("username", TRUE);
-                $password = MD5($this->input->post('password', TRUE));
+                $password = $this->input->post('password', TRUE);
 
                 //checking data via model
-                $checking = $this->admin->check_login('tbl_users', array('username' => $username), array('password' => $password));
+                $checking = $this->Admin->check_login('user', array('username' => $username), array('password' => $password));
 
                 //jika ditemukan, maka create session
-                if ($checking != FALSE) {
+                if ($checking == TRUE) {
                     foreach ($checking as $apps) {
 
                         $session_data = array(
@@ -57,7 +50,7 @@ class login extends CI_Controller
                         //set session userdata
                         $this->session->set_userdata($session_data);
 
-                        redirect('dashboard/');
+                        redirect(base_url('mahasiswa'));
 
                     }
                 }else{

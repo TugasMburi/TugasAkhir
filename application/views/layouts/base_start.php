@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php isset($title) ?: $title = 'Pemrograman Web Berbasis Framework'; echo $title ?></title>
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <style>
-        .footer {
+        footer {
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -16,7 +16,7 @@
             background-color: #f5f5f5;
         }
 
-        .container .text-footer {
+        .container text-footer {
             margin: 20px 0;
         }
 

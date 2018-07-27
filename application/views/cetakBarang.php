@@ -179,7 +179,7 @@ $(document).ready(function(){
     opacity:0.8;
 }
 
-/* Add a gray color to all navbar links */
+/* Add a gray color to all navbar link */
 .navbar li a, .navbar .navbar-brand { 
     color: #d5d5d5 !important;
     margin-top: 12px;

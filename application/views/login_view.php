@@ -3,9 +3,12 @@
 <div class="container" style="margin-top: 50px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Login</h1>
+        
             <?php if(isset($error)) { echo $error; }; ?>
             <div class="account-wall">
+            <body background="<?php echo base_url('assets/images/bg1.jpg'); ?>">
+            <h1 class="text-center login-title">LOGIN</h1> 
+            <br> 
                 <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                      alt="">
                 <form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/Login/loginAwal">
@@ -27,7 +30,7 @@
                     </label>
                     <div class="text-center"> <a href="<?php echo base_url('index.php/Login/register') ?>">Create an account</a></div>
                 </form>
-            </div>
+            </div>  
             <div id="error" style="margin-top: 10px"></div>
         </div>
     </div>

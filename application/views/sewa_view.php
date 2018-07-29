@@ -96,117 +96,79 @@
 </nav>
 
 <div id="home"></div>
+<div class="container">
+            
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h2><center>Form Sewa Dress</center></h2>
+    <br>    
+      <form class="form-signin" method="post" action="<?php echo base_url('index.php/sewa/pinjam') ?>">
+        <?php if (validation_errors() == true) {?>
+        <div class="alert alert-danger" role="alert">
+        <center><span class="glyphicon glyphicon-exclamation-sign"></span>Error!</center><hr>
+        <?php echo validation_errors();?>
+        </div>
+        <?php } ?>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input type="text" value="<?php echo $username ?>" name="nama" id="nama" class="form-control" placeholder="Nama Penyewa " autofocus>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-camera"></span>
+            </span>
+            <select class="form-control" name="nama_dress" id="nama_dress">
+              <option value="0">-- Pilih Dress --</option>
+                <?php 
+                  foreach ($list_barang as $key => $value){ 
+                ?>
+                  <option name="nama" id="nama" value="<?php echo $value['id_barang'] ?>"><?php echo $value['nama_barang'] ?></option>
+                  <!-- echo "<option value='$value[id_barang]'>$value['nama_barang']</option>"; -->
+                <?php } ?>
+            </select>
+        </div>
+        <!-- <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input type="date" name="tgl_pinjam" id="tgl_pinjam" class="form-control" placeholder="Tanggal Pinjam" autofocus>
+        </div> -->
+        <div class="input-group">
+            <!-- <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span> -->
+            <input type="hidden" value="<?php echo date('Y-m-d'); ?>" name="tgl_pinjam" id="tgl_pinjam" class="form-control" placeholder="Tanggal Pinjam">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input placeholder="Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="tgl_kembali" id="tgl_kembali" class="form-control" placeholder="Tanggal Kembali" autofocus>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </span>
+            <input type="number" name="jumlah" id="jumlah" class="form-control" placeholder="Jumlah Sewa" autofocus>
+        </div>
+        <br>
+      <div style="float:left;"><a href="<?php echo base_url("index.php/admin") ?>" class="btn"><span class="glyphicon glyphicon-chevron-left"></span> Back</a></div>
+      <div style="float:right;"><button class="btn pull-right" type="submit"><span class="glyphicon glyphicon-save"></span> Submit</button></div>
+    </div>
+    </form>
     
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="<?php echo base_url('assets/images/baju1.jpg'); ?>" width="100%" height="100%">
-        <div class="carousel-caption">
-          <h3>Sewa Wedding Dress Malang</h3>
-          <p>Murah</p>
-        </div>      
-      </div>
-
-      <div class="item">
-        <img src="<?php echo base_url('assets/images/baju4.jpg'); ?>" width="100%" height="100%">
-        <div class="carousel-caption">
-          <h3>Sewa Wedding Dress Malang</h3>
-          <p>Harga Terjangkau</p>
-        </div>      
-      </div>
-    
-      <div class="item">
-        <img src="<?php echo base_url('assets/images/baju3.jpg'); ?>" width="100%" height="100%">
-        <div class="carousel-caption">
-          <h3>Sewa Wedding Dress Malang</h3>
-          <p>Cocok Untuk Foto Pre Wedding</p>
-        </div>      
-      </div>
-    </div>
-
-
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<!-- Team -->
-<div id="team"></div>
-<div class="container-fluid text-center">
-  <br><br>
-  <h3>THE TEAM</h3>
-  <br>
-  <div class="row">
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-3">
-      <p class="text-center"><strong>Alwan GK</strong></p><br>
-      <a href="#ket-jepitt" data-toggle="collapse">
-      <img src="<?php echo base_url('assets/images/profil.jpg'); ?>" class="img-circle person" alt="Random Name" width="255" height="255">
-    </a>
-
-    </div>
-    <div class="col-sm-3">
-      <p class="text-center"><strong>Fajar Lukman</strong></p><br>
-      <img src="<?php echo base_url('assets/images/profil.jpg'); ?>" class="img-circle person" alt="Random Name" width="255" height="255">
-    </a>
     </div>
   </div>
-  <br><br>
-</div>
 
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<!-- Mesen -->
-<div class="container-fluid text-center" style="background: #2d2d30;">
-  <br><br>
-<div id="price" class="row text-center">
-  <?php
-  //Columns must be a factor of 12 (1,2,3,4,6,12)
-  $numOfCols = 3;
-  $rowCount = 0;
-  $bootstrapColWidth = 12 / $numOfCols;
-  ?>
-  <div class="row">
-    <?php
-    foreach ($list_barang as $key => $value){
-    ?>  
-        <div class="col-sm-<?php echo $bootstrapColWidth; ?>" >
-            <div class="thumbnail">
-                <h3><?php echo $value['nama_barang'] ?></h3>
-                <hr>
-                <p>Rp. <?php echo number_format($value['harga']) ?> / Hari</p>
-                <p>Stok <strong><?php echo $value['stok'] ?></strong></p>
-
-                <?php if($value['stok'] <= 0) { ?>
-                <a href="<?php echo base_url('index.php/home/sewa'); ?>" class="btn disabled">Sewa</a>
-                <?php } else { ?>
-                <a href="<?php echo base_url('index.php/home/sewa'); ?>" class="btn">Sewa</a>
-                <?php } ?>
-
-            </div>
-        </div>
-  <?php
-    $rowCount++;
-    if($rowCount % $numOfCols == 0) echo '</div><div class="row">';
-  }
-  ?>
-</div>
-</div>
-
-</div>
-<br>
 </div>
 
 </div>

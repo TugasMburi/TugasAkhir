@@ -145,6 +145,11 @@ function tidakboleh(){
             </span>
             <input type="number" name="stok" id="stok" class="form-control" placeholder="Stok" autofocus>
         </div>
+        <div class="form-group">
+	       	<label for="Foto">Foto</label>
+      	  <input type="file" name="foto" size="20" value="<?php echo set_value('foto'); ?>">
+      	</div>
+        
         <br>
       <div style="float:left;"><a href="<?php echo base_url("index.php/admin") ?>" class="btn"><span class="glyphicon glyphicon-chevron-left"></span> Back</a></div>
       <div style="float:right;"><button class="btn pull-right" type="submit"><span class="glyphicon glyphicon-save"></span> Submit</button></div>
